@@ -5,7 +5,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            contacts: contacts
+            contacts: contacts,
+            activeContactId: 1
         }
     },
     methods: {

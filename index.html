@@ -31,7 +31,8 @@
                 <div class="notification"></div>
                 <div class="searchbar">search</div>
                 <div class="contacts">
-                    <div class="contact d-flex" v-for="(contact, index) in contacts" :key="contact.id">
+                    <div class="contact d-flex" :class="{'active': activeContactId === contact.id}"
+                        v-for="(contact, index) in contacts" :key="contact.id">
                         <img :src="contact.avatar" :alt="contact.name">
                         <div class="name flex-grow-2">
                             <h4>{{ contact.name}}</h4>
@@ -44,6 +45,12 @@
             <div id="chatWrapper" class="db-debug">
                 <div class="toolbar"></div>
                 <div class="chat">
+                    <div class="db-debug">
+                        <div class="msg">ciao</div>
+                    </div>
+                    <div class="db-debug">
+                        <div class="msg">Ciao, ciao</div>
+                    </div>
                 </div>
                 <div class="toolbar"></div>
             </div>
