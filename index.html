@@ -4,14 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom css -->
     <link rel="stylesheet" href="asset/css/style.css">
+    <!-- Custom javascript type: module -->
     <script type="module" src="asset/javascript/main.js"></script>
+    <!-- Import Vue JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Font awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Boolzapp</title>
 </head>
 
 <body>
-    <div id="app" class="db-debug"></div>
+    <div id="app" class="db-debug">
+        <div class="container h-100 d-flex">
+            <div id="contactList" class="db-debug">
+                <div class="toolbar"></div>
+                <div class="notification"></div>
+                <div class="searchbar db-debug">search</div>
+                <div class="contacts">
+                    <div class="contact d-flex  db-debug">
+                        <img src="asset/img/avatar_1.jpg" alt="Michele">
+                        <div class="name flex-grow-2 db-debug">
+                            <h4>Michele</h4>
+                            <small>Ultimo messaggio</small>
+                        </div>
+                        <div class="time  db-debug">12:00</div>
+                    </div>
+                </div>
+            </div>
+            <div id="chatWrapper" class="db-debug">
+                <div class="toolbar"></div>
+                <div class="chat">
+                </div>
+                <div class="toolbar"></div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

@@ -1,4 +1,14 @@
 /* -------------------------------------------------------------------------------- */
+/* ! Variabili */
+/* -------------------------------------------------------------------------------- */
+:root {
+    --light-grey: #eee;
+    --light-blue: #71e3ff;
+    --white: #fff;
+    --grey: #444;
+}
+
+/* -------------------------------------------------------------------------------- */
 /* ! Reset */
 /* -------------------------------------------------------------------------------- */
 * {
@@ -17,6 +27,75 @@ ul {
 #app {
     height: 100vh;
     width: 100%;
+    background: linear-gradient(180deg, #009678 18%, #d8dbd5 18%);
+    padding: 30px 0;
+}
+
+/* -------------------------------------------------------------------------------- */
+/* ! App Boolzapp*/
+/* -------------------------------------------------------------------------------- */
+/* container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--white);
+}
+
+#contactList {
+    width: 40%;
+}
+
+.notification {
+    height: 70px;
+    background-color: var(--light-blue);
+}
+
+.searchbar {
+    height: 50px;
+}
+
+/* Contacts */
+.contacts {
+    height: calc(100% - 190px);
+    overflow-y: auto;
+}
+
+.contact {
+    height: 70px;
+    border-bottom: 1px solid var(--light-grey);
+    padding: 10px;
+}
+
+.contact img {
+    border-radius: 50%;
+    height: 50px;
+    border: 1px solid red;
+}
+
+.name {
+    padding: 0px 20px;
+}
+
+.time,
+small {
+    font-size: 0.8em;
+    color: var(--grey);
+}
+
+#chatWrapper {
+    width: 60%;
+}
+
+.toolbar {
+    height: 70px;
+    background-color: var(--light-grey);
+    padding: 5px;
+}
+
+.chat {
+    height: calc(100% - 140px);
+    overflow-y: auto;
+    padding: 0px 20px;
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -24,4 +103,20 @@ ul {
 /* -------------------------------------------------------------------------------- */
 .db-debug {
     border: 1px solid red;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.space-b {
+    justify-content: space-between;
+}
+
+.flex-grow-2 {
+    flex-grow: 2;
 }
