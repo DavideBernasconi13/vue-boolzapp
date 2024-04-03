@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
     <title>Boolzapp</title>
 </head>
 
@@ -23,15 +29,15 @@
             <div id="contactList" class="db-debug">
                 <div class="toolbar"></div>
                 <div class="notification"></div>
-                <div class="searchbar db-debug">search</div>
+                <div class="searchbar">search</div>
                 <div class="contacts">
-                    <div class="contact d-flex  db-debug">
-                        <img src="asset/img/avatar_1.jpg" alt="Michele">
-                        <div class="name flex-grow-2 db-debug">
-                            <h4>Michele</h4>
+                    <div class="contact d-flex" v-for="(contact, index) in contacts" :key="contact.id">
+                        <img :src="contact.avatar" :alt="contact.name">
+                        <div class="name flex-grow-2">
+                            <h4>{{ contact.name}}</h4>
                             <small>Ultimo messaggio</small>
                         </div>
-                        <div class="time  db-debug">12:00</div>
+                        <div class="time">12:00</div>
                     </div>
                 </div>
             </div>
