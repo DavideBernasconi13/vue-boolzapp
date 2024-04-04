@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="asset/css/style.css">
     <!-- Custom javascript type: module -->
     <script type="module" src="asset/javascript/main.js"></script>
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <!-- Import Vue JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Font awesome CDN link -->
@@ -24,7 +26,7 @@
 </head>
 
 <body>
-    <div id="app" class="db-debug">
+    <div id="app" class="">
         <div class="container h-100 d-flex">
             <div id="contactList">
                 <div class="toolbar b-r-1 d-flex">
@@ -48,14 +50,15 @@
                     </div>
                 </div>
                 <div class="searchbar d-flex">
-                    <div class="search-icon">
+                    <div class="search-icon p-10">
                         <i class="fas fa-search"></i>
                     </div>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchText">
                 </div>
                 <div class="contacts">
                     <div class="contact d-flex" :class="{'active': activeContactId === contact.id}"
-                        v-for="(contact, index) in contacts" :key="contact.id" @click="changeContact(contact.id)">
+                        v-for="(contact, index) in filteredContact" :key="contact.id"
+                        @click="changeContact(contact.id)">
                         <img :src="contact.avatar" :alt="contact.name">
                         <div class="name flex-grow-2">
                             <h4>{{ contact.name}}</h4>
@@ -65,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <div id="chatWrapper" class="db-debug">
+            <div id="chatWrapper">
                 <div class="toolbar">
                     <div class="contact-nav d-flex">
                         <div class="contact-icons-l d-flex">
@@ -86,13 +89,17 @@
                 </div>
                 <div class="chat">
                     <div class="d-flex p-10" v-for="(msg, index) in activeContact.messages">
-                        <div class="msg" :class="msg.status">{{msg.message}}</div>
+                        <div class="msg" :class="msg.status">{{msg.message}}
+                            <small>{{msg.date}}</small>
+                        </div>
+
                     </div>
                 </div>
                 <div class="toolbar">
                     <div class="text-controls d-flex">
                         <i class="far fa-smile p-10"></i>
-                        <input type="text" placeholder="Scrivi un messaggio" class="flex-grow-2 p-10">
+                        <input type="text" placeholder="Scrivi un messaggio" class="flex-grow-2 p-10" v-model="msgText"
+                            @keyup.enter="sendMessage">
                         <i class="fas fa-microphone p-10"></i>
                     </div>
                 </div>

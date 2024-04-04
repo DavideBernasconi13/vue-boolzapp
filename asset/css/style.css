@@ -56,6 +56,12 @@ body {
 
 .searchbar {
     height: 50px;
+    align-items: center;
+}
+
+.searchbar input {
+    padding: 10px;
+    width: 90%;
 }
 
 /* Contacts */
@@ -68,6 +74,7 @@ body {
     height: 70px;
     border-bottom: 1px solid var(--light-grey);
     padding: 10px;
+    cursor: pointer;
 }
 
 /* Stili per avatar */
@@ -135,12 +142,18 @@ small {
     padding: 10px;
 }
 
+.msg small {
+    display: block;
+    text-align: right;
+    padding-top: 5px;
+}
+
 .sent {
     background-color: limegreen;
     margin-left: auto;
 }
 
-.receveid {
+.received {
     background-color: var(--white);
     margin-right: auto;
 }
@@ -148,6 +161,16 @@ small {
 .text-controls {
     align-items: center;
     height: 60px;
+}
+
+.text-controls input {
+    border: none;
+    border-radius: 5px;
+    font-family: 'Lato', san serif;
+}
+
+.text-controls input:focus-visible {
+    border: 1px solid red;
 }
 
 /* -------------------------------------------------------------------------------- */
