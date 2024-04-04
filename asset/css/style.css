@@ -193,8 +193,16 @@ small {
 .msg {
     width: 300px;
     border-radius: 10px;
-    border: 0.7px solid var(--grey);
     padding: 10px;
+    position: relative;
+}
+
+.msg:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
 }
 
 .msg small {
@@ -208,9 +216,19 @@ small {
     margin-left: auto;
 }
 
+.sent:before {
+    right: -12px;
+    background: linear-gradient(135deg, var(--sent) 0%, var(--sent) 50%, transparent 50%, transparent);
+}
+
 .received {
     background-color: var(--white);
     margin-right: auto;
+}
+
+.received:before {
+    right: 292px;
+    background: linear-gradient(-135deg, white 0%, white 50%, transparent 50%, transparent);
 }
 
 .text-controls {
