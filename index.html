@@ -29,19 +29,19 @@
     <div id="app" class="">
         <div class="container h-100 d-flex">
             <div id="contactList">
-                <div class="toolbar b-r-1 d-flex">
+                <div class="toolbar b-r-1 d-flex align-items-center p-10">
                     <div class="user-icon-left d-flex flex-grow-2">
                         <img src="asset/img/avatar_io.jpg" alt="Sofia">
                         <h4 class="p-10">Sofia</h4>
                     </div>
-                    <div class="user-icon-right d-flex">
+                    <div class="user-icon-right align-items-center d-flex">
                         <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
                 <div class="notification d-flex p-10 align-items-center">
-                    <div class="bell-background">
+                    <div class="bell-background d-flex">
                         <i class="fas fa-bell-slash"></i>
                     </div>
                     <div class="notifications-texts">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="searchbar d-flex align-items-center">
-                    <div class="search-icon p-10">
+                    <div class="search-icon">
                         <i class="fas fa-search"></i>
                     </div>
                     <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchText">
@@ -78,7 +78,7 @@
                                 <small>Ultimo accesso oggi alle ore</small>
                             </div>
                         </div>
-                        <div class="contact-icons-r d-flex">
+                        <div class="contact-icons-right d-flex">
                             <i class="fas fa-search"></i>
                             <i class="fas fa-paperclip"></i>
                             <i class="fas fa-ellipsis-v"></i>

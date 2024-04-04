@@ -2,7 +2,7 @@
 /* ! Custom properties */
 /* -------------------------------------------------------------------------------- */
 :root {
-    --light-grey: #EAEAEA;
+    --light-grey: #dbd7d7;
     --light-blue: #8EDAFC;
     --white: #fff;
     --grey: #B1B1B1;
@@ -24,7 +24,7 @@ ul {
 }
 
 a {
-    color: var(--active);
+    color: #444;
     font-size: 0.8em;
 }
 
@@ -56,10 +56,12 @@ input {
     border: none;
     font-family: 'Lato', san-serif;
     font-size: 1em;
+    box-shadow: 0 1px 1px #eee;
 }
 
 input:focus-visible {
     outline: 0.5px solid var(--grey);
+    box-shadow: 0 1px 1px transparent;
 }
 
 /* status contact: active */
@@ -73,6 +75,12 @@ input:focus-visible {
 .contact-icons-l img {
     border-radius: 50%;
     height: 50px;
+}
+
+/* fonts size icon*/
+i {
+    font-size: 1.3em;
+    cursor: pointer;
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -95,15 +103,35 @@ input:focus-visible {
     background-color: var(--light-blue);
 }
 
-.bell
+.bell-background {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--white);
+    margin-right: 15px;
+}
 
-/* searchnar */
+.bell-background i {
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    color: var(--light-blue);
+}
+
+/* searchbar */
 .searchbar {
     height: 50px;
+    padding: 5px;
+}
+
+.search-icon {
+    width: 10%;
+    text-align: center;
 }
 
 .searchbar input {
     width: 90%;
+    margin-left: auto;
 }
 
 /* Contacts */
@@ -117,6 +145,10 @@ input:focus-visible {
     border-bottom: 1px solid var(--light-grey);
     padding: 10px;
     cursor: pointer;
+}
+
+.contact:hover {
+    background-color: var(--light-grey);
 }
 
 /* display contact */
@@ -141,20 +173,13 @@ small {
     padding: 0 20px;
 }
 
-.user-icon-right {
-    align-items: center;
-    font-size: 1.3em;
-}
-
 .user-icon-right i,
-.contact-icons-r i {
+.contact-icons-right i {
     padding: 10px;
     color: #bdbdbd;
-    cursor: pointer;
 }
 
-.contact-icons-r {
-    align-items: center;
+.contact-icons-right {
     margin-left: auto;
 }
 
