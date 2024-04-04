@@ -1,11 +1,13 @@
 /* -------------------------------------------------------------------------------- */
-/* ! Variabili */
+/* ! Custom properties */
 /* -------------------------------------------------------------------------------- */
 :root {
-    --light-grey: #eee;
-    --light-blue: #71e3ff;
+    --light-grey: #EAEAEA;
+    --light-blue: #8EDAFC;
     --white: #fff;
-    --grey: #444;
+    --grey: #B1B1B1;
+    --active: #E9EBEB;
+    --sent: #D5F9BA;
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -19,6 +21,11 @@
 
 ul {
     list-style: none;
+}
+
+a {
+    color: var(--active);
+    font-size: 0.8em;
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -35,16 +42,50 @@ body {
     padding: 30px 0;
 }
 
+/* parti che prevedono funzionalità dell'app */
+.toolbar {
+    height: 70px;
+    background-color: var(--light-grey);
+    padding: 5px;
+}
+
+/* campi di input */
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Lato', san-serif;
+    font-size: 1em;
+}
+
+input:focus-visible {
+    outline: 0.5px solid var(--grey);
+}
+
+/* status contact: active */
+.active {
+    background-color: var(--active);
+}
+
+/* All avatar */
+.user-icon-left img,
+.contact img,
+.contact-icons-l img {
+    border-radius: 50%;
+    height: 50px;
+}
+
 /* -------------------------------------------------------------------------------- */
 /* ! App Boolzapp*/
 /* -------------------------------------------------------------------------------- */
-/* container */
+/* container app */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     background-color: var(--white);
 }
 
+/* parte sinistra */
 #contactList {
     width: 40%;
 }
@@ -54,13 +95,14 @@ body {
     background-color: var(--light-blue);
 }
 
+.bell
+
+/* searchnar */
 .searchbar {
     height: 50px;
-    align-items: center;
 }
 
 .searchbar input {
-    padding: 10px;
     width: 90%;
 }
 
@@ -77,14 +119,7 @@ body {
     cursor: pointer;
 }
 
-/* Stili per avatar */
-.user-icon-left img,
-.contact img,
-.contact-icons-l img {
-    border-radius: 50%;
-    height: 50px;
-}
-
+/* display contact */
 .name {
     padding: 0px 20px;
 }
@@ -95,19 +130,14 @@ small {
     color: var(--grey);
 }
 
+/* parte destra: chat space */
 #chatWrapper {
     width: 60%;
 }
 
-.toolbar {
-    height: 70px;
-    background-color: var(--light-grey);
-    padding: 5px;
-}
-
+/* chat space: parte superiore -> info contatto */
 .contact-nav {
     height: 60px;
-    align-items: center;
     padding: 0 20px;
 }
 
@@ -149,7 +179,7 @@ small {
 }
 
 .sent {
-    background-color: limegreen;
+    background-color: var(--sent);
     margin-left: auto;
 }
 
@@ -163,16 +193,6 @@ small {
     height: 60px;
 }
 
-.text-controls input {
-    border: none;
-    border-radius: 5px;
-    font-family: 'Lato', san serif;
-}
-
-.text-controls input:focus-visible {
-    border: 1px solid red;
-}
-
 /* -------------------------------------------------------------------------------- */
 /* ! Utilities */
 /* -------------------------------------------------------------------------------- */
@@ -180,6 +200,7 @@ small {
     border: 1px solid red;
 }
 
+/* Layout and flex */
 .h-100 {
     height: 100%;
 }
@@ -192,14 +213,15 @@ small {
     justify-content: space-between;
 }
 
+.align-items-center {
+    align-items: center;
+}
+
 .flex-grow-2 {
     flex-grow: 2;
 }
 
-.active {
-    background-color: coral;
-}
-
+/* Margin e padding */
 .p-10 {
     padding: 10px;
 }
@@ -208,6 +230,7 @@ small {
     padding: 0 20px;
 }
 
+/* border */
 .b-r-1 {
     border-right: 0.5px solid #bdbdbd;
 }

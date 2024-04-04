@@ -40,16 +40,16 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-                <div class="notification d-flex">
+                <div class="notification d-flex p-10 align-items-center">
                     <div class="bell-background">
                         <i class="fas fa-bell-slash"></i>
                     </div>
                     <div class="notifications-texts">
-                        <div class="strong">Ricevi notifiche di nuovi messaggi</div>
+                        <div>Ricevi notifiche di nuovi messaggi</div>
                         <a href="#">Attiva le notifiche desktop</a>
                     </div>
                 </div>
-                <div class="searchbar d-flex">
+                <div class="searchbar d-flex align-items-center">
                     <div class="search-icon p-10">
                         <i class="fas fa-search"></i>
                     </div>
@@ -70,14 +70,12 @@
             </div>
             <div id="chatWrapper">
                 <div class="toolbar">
-                    <div class="contact-nav d-flex">
+                    <div class="contact-nav align-items-center d-flex">
                         <div class="contact-icons-l d-flex">
                             <img :src="activeContact.avatar" :alt="activeContact.name">
-                            <div class="contact-info">
-                                <div class="contact-name">{{activeContact.name}}</div>
-                                <div class="last-access">
-                                    Ultimo accesso oggi alle ore
-                                </div>
+                            <div class="contact-info name">
+                                <h4>{{activeContact.name}}</h4>
+                                <small>Ultimo accesso oggi alle ore</small>
                             </div>
                         </div>
                         <div class="contact-icons-r d-flex">
