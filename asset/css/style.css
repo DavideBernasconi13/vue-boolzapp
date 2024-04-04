@@ -70,7 +70,10 @@ body {
     padding: 10px;
 }
 
-.contact img {
+/* Stili per avatar */
+.user-icon-left img,
+.contact img,
+.contact-icons-l img {
     border-radius: 50%;
     height: 50px;
 }
@@ -95,6 +98,29 @@ small {
     padding: 5px;
 }
 
+.contact-nav {
+    height: 60px;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.user-icon-right {
+    align-items: center;
+    font-size: 1.3em;
+}
+
+.user-icon-right i,
+.contact-icons-r i {
+    padding: 10px;
+    color: #bdbdbd;
+    cursor: pointer;
+}
+
+.contact-icons-r {
+    align-items: center;
+    margin-left: auto;
+}
+
 .chat {
     height: calc(100% - 140px);
     overflow-y: auto;
@@ -108,11 +134,20 @@ small {
     border: 0.7px solid var(--grey);
     padding: 10px;
 }
-.sent{
+
+.sent {
     background-color: limegreen;
+    margin-left: auto;
 }
-.receveid{
+
+.receveid {
     background-color: var(--white);
+    margin-right: auto;
+}
+
+.text-controls {
+    align-items: center;
+    height: 60px;
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -140,4 +175,16 @@ small {
 
 .active {
     background-color: coral;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.p-0-20 {
+    padding: 0 20px;
+}
+
+.b-r-1 {
+    border-right: 0.5px solid #bdbdbd;
 }

@@ -26,13 +26,36 @@
 <body>
     <div id="app" class="db-debug">
         <div class="container h-100 d-flex">
-            <div id="contactList" class="db-debug">
-                <div class="toolbar"></div>
-                <div class="notification"></div>
-                <div class="searchbar">search</div>
+            <div id="contactList">
+                <div class="toolbar b-r-1 d-flex">
+                    <div class="user-icon-left d-flex flex-grow-2">
+                        <img src="asset/img/avatar_io.jpg" alt="Sofia">
+                        <h4 class="p-10">Sofia</h4>
+                    </div>
+                    <div class="user-icon-right d-flex">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="notification d-flex">
+                    <div class="bell-background">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div class="notifications-texts">
+                        <div class="strong">Ricevi notifiche di nuovi messaggi</div>
+                        <a href="#">Attiva le notifiche desktop</a>
+                    </div>
+                </div>
+                <div class="searchbar d-flex">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
                 <div class="contacts">
                     <div class="contact d-flex" :class="{'active': activeContactId === contact.id}"
-                        v-for="(contact, index) in contacts" :key="contact.id">
+                        v-for="(contact, index) in contacts" :key="contact.id" @click="changeContact(contact.id)">
                         <img :src="contact.avatar" :alt="contact.name">
                         <div class="name flex-grow-2">
                             <h4>{{ contact.name}}</h4>
@@ -43,16 +66,36 @@
                 </div>
             </div>
             <div id="chatWrapper" class="db-debug">
-                <div class="toolbar"></div>
-                <div class="chat">
-                    <div class="db-debug">
-                        <div class="msg">ciao</div>
-                    </div>
-                    <div class="db-debug">
-                        <div class="msg">Ciao, ciao</div>
+                <div class="toolbar">
+                    <div class="contact-nav d-flex">
+                        <div class="contact-icons-l d-flex">
+                            <img :src="activeContact.avatar" :alt="activeContact.name">
+                            <div class="contact-info">
+                                <div class="contact-name">{{activeContact.name}}</div>
+                                <div class="last-access">
+                                    Ultimo accesso oggi alle ore
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-icons-r d-flex">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="toolbar"></div>
+                <div class="chat">
+                    <div class="d-flex p-10" v-for="(msg, index) in activeContact.messages">
+                        <div class="msg" :class="msg.status">{{msg.message}}</div>
+                    </div>
+                </div>
+                <div class="toolbar">
+                    <div class="text-controls d-flex">
+                        <i class="far fa-smile p-10"></i>
+                        <input type="text" placeholder="Scrivi un messaggio" class="flex-grow-2 p-10">
+                        <i class="fas fa-microphone p-10"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
