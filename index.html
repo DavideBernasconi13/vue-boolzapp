@@ -65,7 +65,7 @@
                         @click="changeContact(contact.id)">
                         <img :src="contact.avatar" :alt="contact.name">
                         <div class="name flex-grow-2">
-                            <h4>{{ contact.name}}</h4>
+                            <h4>{{contact.name}}</h4>
                             <small>Ultimo messaggio</small>
                         </div>
                         <div class="time">12:00</div>
@@ -96,8 +96,10 @@
                             <small>{{msg.date}}</small>
                             <span class="icon-panel"><i class="fa-solid fa-angle-down"></i></span>
                             <div class="panel p-10 d-none">
-                                <div class="panel-option">Message info</div>
-                                <div class="panel-option">Delete message</div>
+                                <ul>
+                                    <li class="panel-option">Message info</li>
+                                    <li class="panel-option">Delete message</li>
+                                </ul>
                             </div>
                         </div>
 
