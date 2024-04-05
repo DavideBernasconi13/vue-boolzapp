@@ -302,5 +302,6 @@ small {
 .icon .d-none,
 .d-none {
     display: none;
+    transform: 0.3s;
     transition: all 1s cubic-bezier(.215, .61, .355, 1);
 }

@@ -44,6 +44,7 @@ createApp({
         sendMessage() {
             const newMessage = this.createMessage(this.msgText, 'sent');
             this.activeContact.messages.push(newMessage);
+            this.showEmoji = false;
             this.msgText = '';
             setTimeout(() => {
                 const newMessage = this.createMessage('ok', 'received')
@@ -62,7 +63,7 @@ createApp({
     },
     mounted() {
         console.log(this.contacts);
-        console.log(this.showEmoji); 
+        console.log(this.showEmoji);
 
     }
 }).component('Picker', Picker).mount('#app'); 
