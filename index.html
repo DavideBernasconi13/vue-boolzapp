@@ -107,7 +107,7 @@
                     <div class="text-controls d-flex">
                         <div class="icon">
                             <i class="far fa-smile p-10" @click="showEmoji=!showEmoji"></i>
-                            <Picker @select="onSelectEmoji" class="mia" :class="{'d-none': !showEmoji}" />
+                            <Picker @select="onSelectEmoji" class="positionEmoji" :class="{'d-none': !showEmoji}" />
                         </div>
 
                         <input type="text" placeholder="Scrivi un messaggio" class="flex-grow-2 p-10" v-model="msgText"

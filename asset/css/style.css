@@ -252,6 +252,13 @@ small {
     background: linear-gradient(-135deg, white 0%, white 50%, transparent 50%, transparent);
 }
 
+/* Panel emoji */
+.positionEmoji {
+    position: absolute;
+    bottom: 60px;
+    left: 375px;
+}
+
 .text-controls {
     align-items: center;
     height: 60px;
