@@ -106,13 +106,13 @@
                 <div class="toolbar">
                     <div class="text-controls d-flex">
                         <div class="icon">
-                            <Picker @select="onSelectEmoji" class="mia" :class="{'d-none': !showEmoji}" />
                             <i class="far fa-smile p-10" @click="showEmoji=!showEmoji"></i>
+                            <Picker @select="onSelectEmoji" class="mia" :class="{'d-none': !showEmoji}" />
                         </div>
 
                         <input type="text" placeholder="Scrivi un messaggio" class="flex-grow-2 p-10" v-model="msgText"
                             @keyup.enter="sendMessage">
-                        <div class="icon">
+                        <div class="icons">
                             <i class="fas fa-paper-plane p-10" v-if="msgText" @click="sendMessage"></i>
                             <i class="fas fa-microphone p-10" v-else></i>
 

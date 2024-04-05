@@ -299,6 +299,8 @@ small {
     border-right: 0.5px solid #bdbdbd;
 }
 
+.icon .d-none,
 .d-none {
     display: none;
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
 }
