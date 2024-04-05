@@ -1,4 +1,5 @@
 import { contacts } from "./data.js";
+import Picker from './emoji-picker.js';
 
 const dt = luxon.DateTime;
 
@@ -11,6 +12,7 @@ createApp({
             activeContactId: 1,
             msgText: '',
             searchText: '',
+            showEmoji: false,
         }
     },
     methods: {
@@ -24,6 +26,20 @@ createApp({
                 status: status
             }
             return newMessage;
+        },
+        onSelectEmoji(emoji) {
+            console.log(emoji)
+            this.msgText += emoji.i;
+            /*
+              // result
+              { 
+                  i: "😚", 
+                  n: ["kissing face"], 
+                  r: "1f61a", // with skin tone
+                  t: "neutral", // skin tone
+                  u: "1f61a" // without tone
+              }
+              */
         },
         sendMessage() {
             const newMessage = this.createMessage(this.msgText, 'sent');
@@ -46,6 +62,7 @@ createApp({
     },
     mounted() {
         console.log(this.contacts);
+        console.log(this.showEmoji); 
 
     }
-}).mount('#app'); 
+}).component('Picker', Picker).mount('#app'); 

@@ -10,6 +10,9 @@
     <script type="module" src="asset/javascript/main.js"></script>
     <!-- Luxon -->
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+    <!-- Emoji picker -->
+    <script type="module" src="asset/javascript/emoji-picker.js"></script>
+    <link rel="stylesheet" href="asset/javascript/style.css">
     <!-- Import Vue JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Font awesome CDN link -->
@@ -91,16 +94,30 @@
                     <div class="d-flex p-10" v-for="(msg, index) in activeContact.messages">
                         <div class="msg" :class="msg.status">{{msg.message}}
                             <small>{{msg.date}}</small>
+                            <span class="icon-panel"><i class="fa-solid fa-angle-down"></i></span>
+                            <div class="panel p-10 d-none">
+                                <div class="panel-option">Message info</div>
+                                <div class="panel-option">Delete message</div>
+                            </div>
                         </div>
 
                     </div>
                 </div>
                 <div class="toolbar">
                     <div class="text-controls d-flex">
-                        <i class="far fa-smile p-10"></i>
+                        <div class="icon">
+                            <Picker @select="onSelectEmoji" class="mia" :class="{'d-none': !showEmoji}" />
+                            <i class="far fa-smile p-10" @click="showEmoji=!showEmoji"></i>
+                        </div>
+
                         <input type="text" placeholder="Scrivi un messaggio" class="flex-grow-2 p-10" v-model="msgText"
                             @keyup.enter="sendMessage">
-                        <i class="fas fa-microphone p-10"></i>
+                        <div class="icon">
+                            <i class="fas fa-paper-plane p-10" v-if="msgText" @click="sendMessage"></i>
+                            <i class="fas fa-microphone p-10" v-else></i>
+
+                        </div>
+
                     </div>
                 </div>
             </div>

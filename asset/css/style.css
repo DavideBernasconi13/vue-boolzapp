@@ -211,6 +211,27 @@ small {
     padding-top: 5px;
 }
 
+/* panel sui messaggi*/
+.icon-panel i {
+    position: absolute;
+    top: 10px;
+    left: 270px;
+    font-size: 0.8em;
+}
+
+.panel {
+    position: absolute;
+    top: 24px;
+    left: 83px;
+    width: 200px;
+    background-color: var(--white);
+    text-align: right;
+}
+
+.panel-option {
+    padding: 15px 0;
+}
+
 .sent {
     background-color: var(--sent);
     margin-left: auto;
@@ -276,4 +297,8 @@ small {
 /* border */
 .b-r-1 {
     border-right: 0.5px solid #bdbdbd;
+}
+
+.d-none {
+    display: none;
 }
